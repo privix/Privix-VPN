@@ -121,15 +121,11 @@ WIDTH=40
 CHOICE_HEIGHT=6
 BACKTITLE="VPX Setup Wizard"
 TITLE="VPX VPS Setup"
-MENU="Choose one of the following options:"
-
-# Ask user if they would like to install the vpn software after node install.
-	echo "${GREEN}Would You like to install the VPN Client as well?${GREEN}"
+MENU="Would You like to install the VPN Client as well?"
 
 OPTIONS=(1 "Yes"
 		 2 "No"
 )
-
 
 CHOICE=$(whiptail --clear\
 		--backtitle "$BACKTITLE" \
@@ -156,4 +152,3 @@ case $CHOICE in
 		exit 0
 		;;
 esac
-

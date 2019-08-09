@@ -24,7 +24,8 @@ CHOICE=$(whiptail --clear\
 clear
 case $CHOICE in
         1)	# Privix Node	
-		cd &&  bash -c "$(wget -O - https://git.io/fjyAI)"
+		cd Privix-Node
+		bash Node-Install.sh
         ;;
 	    
         2)  # IPSEC
