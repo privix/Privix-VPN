@@ -16,15 +16,15 @@ This script will let you setup your own VPN server in no more than a minute, eve
 Run the script and follow the assistant:
 
 ```
-git clone --depth=1 https://github.com/MotoAcidic/Privix-openvpn-base.git
+git clone --depth=1 https://github.com/MotoAcidic/privix-vpn.git
 ```
 
 ```
-sudo chmod -R 755 Privix-openvpn-base
+sudo chmod -R 755 privix-vpn
 ```
 
 ```
-cd Privix-openvpn-base
+cd privix-vpn
 ```
 
 ```
@@ -32,7 +32,7 @@ bash Install.sh
 ```
 
 ### All documents
-To connect to your new Privix VPN through a VPN GUI follow this document [Documentation](https://github.com/MotoAcidic/Privix-openvpn-base/Docs/)
+To connect to your new Privix VPN through a VPN GUI follow this document [Documentation](https://github.com/MotoAcidic/privix-vpn/Docs/)
 
 **Have fun, this is crypto after all!**
 

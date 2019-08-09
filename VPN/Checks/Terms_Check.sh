@@ -4,12 +4,12 @@
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
-BACKTITLE="VPX Setup Wizard"
-TITLE="VPX VPS Setup"
-MENU="Choose one of the following options:"
+BACKTITLE="Terms Check"
+TITLE="VPX VPN Terms And Condidtions"
+MENU="Do You Accept The Terms and conditions here: privix.io"
 
-OPTIONS=(1 "Go To Privix Daemon / MasterNode Setup"
-		 2 "Install VPN"
+OPTIONS=(1 "Yes"
+		 2 "No"
 )
 
 
@@ -23,12 +23,15 @@ CHOICE=$(whiptail --clear\
 
 clear
 case $CHOICE in
-        1)	# Privix Node	
-		cd &&  bash -c "$(wget -O - https://git.io/fjyAI)"
+        1) # Yes move to vpn selection
+		cd
+		cd privix-vpn/VPN/
+		bash VPN_Selection_Install.sh
         ;;
 	    
-        2)  # IPSEC
-		cd VPN
-		bash VPN_Selection_Install.sh
+        2) # No Exit
+		exit 1
 		;;
+
+
 esac

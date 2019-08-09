@@ -1,1 +1,0 @@
-# Copyright (c) 2019 Privix. Released under the MIT License.

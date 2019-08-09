@@ -85,10 +85,5 @@ echo "Starting OpenVPN..."
 systemctl -f enable openvpn@openvpn-server
 systemctl restart openvpn@openvpn-server
 
-echo Please input your Masternode Public Key.
-read MNPUBKEY
-
-echo "$MNPUBKEY" > /etc/openvpn/masternodekey.txt
-
 echo
 echo "Installation script has been completed!"

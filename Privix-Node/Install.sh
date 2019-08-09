@@ -25,19 +25,19 @@ CHOICE=$(whiptail --clear\
 
 clear
 case $CHOICE in
-        1)
+        1) # Daemon
 		cd &&  bash -c "$(wget -O - https://git.io/fjybW)"
         ;;
 	    
-        2)
+        2) # Masternode
 		cd &&  bash -c "$(wget -O - https://git.io/fjybl)"
 		;;
 
-		3)
+		3) # Update Daemon and CLI
 		cd &&  bash -c "$(wget -O - https://git.io/fjyb8)"
 		;;
 
-		4)
+		4) # Back to main menu
 		cd &&  bash -c "$(wget -O - https://git.io/fjyb4)"
 		;;
 
