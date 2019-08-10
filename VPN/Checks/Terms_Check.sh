@@ -6,6 +6,7 @@
 LOG_FILE="/etc/openvpn/terms_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP=`curl -s4 icanhazip.com`
+MNSTAT=$(curl -s "https://explorer.privix.io/api/masternode/"${MNADDY}"" | jq '.mns.status')
 
 HEIGHT=15
 WIDTH=40
@@ -41,7 +42,10 @@ case $CHOICE in
 		
 		if [ $USER_INPUT == "Y" ] ||
 		   [ $USER_INPUT == "y" ]; then
-		   echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server." >> ${LOG_FILE}
+		    echo Please input your Masternode payment address you generated for this masternode install, this will be used to verify you are the owner of the masternode.
+		read MNADDY
+			echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has provided ${MNADDY} as their masternode address and has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server. " >> ${LOG_FILE}
+			echo ${MNSTAT} >> ${LOG_FILE}
 		cd
 		bash privix-vpn/VPN/VPN_Selection_Install.sh
 		elif [ $USER_INPUT == "N" ] ||
