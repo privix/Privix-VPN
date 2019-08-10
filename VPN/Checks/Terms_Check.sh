@@ -6,6 +6,7 @@ source MN_CHECK.sh
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # The only user logs will be captured in this script for proof of Terms of Service.
@@ -46,9 +47,9 @@ case $CHOICE in
 		
 		if [ $USER_INPUT == "Y" ] ||
 		   [ $USER_INPUT == "y" ]; then
-		    echo Please input your Masternode payment address you generated for this masternode install, this will be used to verify you are the owner of the masternode.
+		    echo -e "Please input your ${GREEN}Masternode Payment Address${NC} you generated for this masternode install, this will be used to verify you are the owner of the masternode."
 		read MNADDY			
-			echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has provided ${MNADDY} as their masternode address with status ${MNSTAT} and has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server." >> ${LOG_FILE}
+			echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${RED}${MNADDY}${NC} as their masternode address with status ${GREEM}${MNSTAT}${NC} and has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server." >> ${LOG_FILE}
 		cd
 		bash privix-vpn/VPN/VPN_Selection_Install.sh
 		elif [ $USER_INPUT == "N" ] ||
