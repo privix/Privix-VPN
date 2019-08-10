@@ -2,7 +2,8 @@
 # Copyright (c) 2019 Privix. Released under the MIT License.
 
 # Add source to get the curl command talking to explorer api
-#source MN_Check.sh
+#source ./MN_Check.sh
+source ./API_Call.sh
 
 # Colors
 RED='\033[0;31m'
