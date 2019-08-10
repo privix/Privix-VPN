@@ -12,7 +12,7 @@ LOG_FILE="/etc/openvpn/api_call_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP=`curl -s4 icanhazip.com`
 
-MNADDY=$(cat </etc/openvpn/payment_address.txt>)
+MNADDY=$(</etc/openvpn/payment_address.txt)
 echo -e ${LOGTIME} " : ${MNADDY}" >> ${LOG_FILE}
 MNSTAT=$(curl -v "https://explorer.privix.io/api/masternode/${MNADDY}" | jq ".mns.status")
 echo -e ${LOGTIME} " : ${MNSTAT}" >> ${LOG_FILE}
