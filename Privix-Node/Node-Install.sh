@@ -11,7 +11,7 @@ MENU="Choose one of the following options:"
 OPTIONS=(1 "Install Privix Daemon"
 		 2 "Install Privix Masternode"
 		 3 "Update Privix Daemon and CLI"
-         4 "Go Back"
+         4 "Exit"
 )
 
 
@@ -26,19 +26,22 @@ CHOICE=$(whiptail --clear\
 clear
 case $CHOICE in
         1) # Daemon
-		cd &&  bash -c "$(wget -O - https://git.io/fjybW)"
+		cd Daemon
+		bash daemon-install.sh
         ;;
 	    
         2) # Masternode
-		cd &&  bash -c "$(wget -O - https://git.io/fjybl)"
+		cd Masternode
+		bash masternode-install.sh
 		;;
 
 		3) # Update Daemon and CLI
-		cd &&  bash -c "$(wget -O - https://git.io/fjyb8)"
+		cd Update
+		bash update-install.sh
 		;;
 
 		4) # Back to main menu
-		cd &&  bash -c "$(wget -O - https://git.io/fjyb4)"
+		exit 1
 		;;
 
 esac

@@ -27,17 +27,17 @@ clear
 case $CHOICE in
         1) # ipsec
 		cd ipsec
-		bash install.sh
+		bash IPSEC_Install_Menu.sh
         ;;
 	    
         2) # pptp
 		cd pptp
-		bash install.sh
+		bash PPTP_Install_Menu.sh
 		;;
 
 		3) # privixvpn
 		cd privixvpn
-		bash install.sh
+		bash Privix_Install_Menu.sh
 		;;
 
 		4) # Exit Script
