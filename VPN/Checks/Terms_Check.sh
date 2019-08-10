@@ -40,7 +40,7 @@ case $CHOICE in
 		cat privix-vpn/Docs/Temp_Terms_of_Service/Terms.md
 
 		# Ask user if they accept after reading Terms of Service.
-		echo "Do you Accept the Terms of Serivce? ${GREEN}Y${GREEN} or ${RED}N${RED}"		
+		echo "Do you Accept the Terms of Serivce? ${GREEN} Y ${NC} or ${RED} N ${NC}"		
 		read USER_INPUT
 		
 		if [ $USER_INPUT == "Y" ] ||
