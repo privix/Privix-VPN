@@ -1,6 +1,17 @@
 #!/usr/bin/env bash
 # Copyright (c) 2019 Privix. Released under the MIT License.
 
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
+# Logs API Call.
+LOG_FILE="/etc/openvpn/mn_check_log.txt"
+LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
+EXTIP=`curl -s4 icanhazip.com`
+
 STARTDIR=$(pwd)
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
@@ -84,6 +95,12 @@ echo
 echo "Starting OpenVPN..."
 systemctl -f enable openvpn@openvpn-server
 systemctl restart openvpn@openvpn-server
+
+## Create the cronjob
+echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has just finished setting up the privixvpn and is moving to run Masternode Verification Checks." >> ${LOG_FILE}
+cd
+cd privix-vpn/VPN/Check
+bash MN_Check.sh
 
 echo
 echo "Installation script has been completed!"
