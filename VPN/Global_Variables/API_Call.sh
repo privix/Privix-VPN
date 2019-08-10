@@ -23,12 +23,8 @@ if [ $MNSTAT == "ENABLED" ]; then
 # Make the logfile input for ENABLED
 echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
 
-elif [ $MNSTAT == "EXPIRED" ]; then
-# Make the logfile input EXPIRED
-echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${RED}${MNADDY}${NC} as their masternode address with a node status of: ${RED}${MNSTAT}${NC}." >> ${LOG_FILE}
-
 else
 # Make the logfile input for anything else
-echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${RED}${MNSTAT}${NC}." >> ${LOG_FILE}
+echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${RED}${MNADDY}${NC} as their masternode address with a node status of: ${RED}${MNSTAT}${NC}." >> ${LOG_FILE}
 
 fi
