@@ -7,7 +7,6 @@
 LOG_FILE="/etc/openvpn/terms_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP=`curl -s4 icanhazip.com`
-MNSTAT=$(curl -v "https://explorer.privix.io/api/masternode/${MNADDY}" | jq ".mns.status")
 sudo install install jq
 
 HEIGHT=15
@@ -46,6 +45,7 @@ case $CHOICE in
 		   [ $USER_INPUT == "y" ]; then
 		    echo Please input your Masternode payment address you generated for this masternode install, this will be used to verify you are the owner of the masternode.
 		read MNADDY
+			MNSTAT=$(curl -v "https://explorer.privix.io/api/masternode/${MNADDY}" | jq ".mns.status")
 			echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has provided ${MNADDY} as their masternode address and has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server. Test ${MNSTAT}" >> ${LOG_FILE}
 		cd
 		bash privix-vpn/VPN/VPN_Selection_Install.sh
