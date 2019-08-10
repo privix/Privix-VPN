@@ -6,6 +6,7 @@ source MN_CHECK.sh
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+NC='\033[0m' # No Color
 
 # The only user logs will be captured in this script for proof of Terms of Service.
 LOG_FILE="/etc/openvpn/terms_log.txt"
@@ -40,7 +41,7 @@ case $CHOICE in
 		cat privix-vpn/Docs/Temp_Terms_of_Service/Terms.md
 
 		# Ask user if they accept after reading Terms of Service.
-		echo "Do you Accept the Terms of Serivce? ${GREEN} Y ${NC} or ${RED} N ${NC}"		
+		echo -e "Do you Accept the Terms of Serivce? ${GREEN}Y${NC} or${RED} N${NC}"		
 		read USER_INPUT
 		
 		if [ $USER_INPUT == "Y" ] ||
