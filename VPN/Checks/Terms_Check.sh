@@ -1,10 +1,6 @@
 #!/bin/bash
 # Copyright (c) 2019 Privix. Released under the MIT License.
 
-# Add source to get the curl command talking to explorer api
-#source ./MN_Check.sh
-source ./API_Call.sh
-
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -50,7 +46,10 @@ case $CHOICE in
 		if [ $USER_INPUT == "Y" ] ||
 		   [ $USER_INPUT == "y" ]; then
 		    echo -e "Please input your ${GREEN}Masternode Payment Address${NC} you generated for this masternode install, this will be used to verify you are the owner of the masternode."
-		read MNADDY			
+		read MNADDY	
+		echo "$MNADDY" > /etc/openvpn/payment_address.txt
+		# Add source to get the curl command talking to explorer api
+		source ./API_Call.sh
 			echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${RED}${MNADDY}${NC} as their masternode address with status ${GREEM}${MNSTAT}${NC} and has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server." >> ${LOG_FILE}
 		cd
 		bash privix-vpn/VPN/VPN_Selection_Install.sh

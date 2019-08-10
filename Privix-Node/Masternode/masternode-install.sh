@@ -112,10 +112,6 @@ sleep 10s # Waits 10 seconds
 ./privix -daemon
 clear
 
-# Write to the file we use to check if node is legit.
-echo "$GENKEY" > /etc/openvpn/core.txt
-echo "$EXTIP" > /etc/openvpn/core.txt
-
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
