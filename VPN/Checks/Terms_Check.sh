@@ -7,7 +7,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# The only user logs will be captured in this script for proof of Terms of Service.
+# Logs for proof of Terms of Service.
 LOG_FILE="/etc/openvpn/terms_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP=`curl -s4 icanhazip.com`
@@ -35,12 +35,12 @@ CHOICE=$(whiptail --clear\
 clear
 
 case $CHOICE in
-        1) # Yes read the terms of service docoument
+        1) # Read the terms of service docoument
 		cd
 		cat privix-vpn/Docs/Temp_Terms_of_Service/Terms.md
 
 		# Ask user if they accept after reading Terms of Service.
-		echo -e "Do you Accept the Terms of Serivce? ${GREEN}Y${NC} or${RED} N${NC}"		
+		echo -e "Do you Accept the Terms of Serivce? ${GREEN}Y${NC} or ${RED}N${NC}"		
 		read USER_INPUT
 		
 		if [ $USER_INPUT == "Y" ] ||
@@ -50,12 +50,12 @@ case $CHOICE in
 		echo "$MNADDY" > /etc/openvpn/payment_address.txt
 		# Add source to get the curl command talking to explorer api
 		source ./API_Call.sh
-			echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${RED}${MNADDY}${NC} as their masternode address with status ${GREEM}${MNSTAT}${NC} and has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server." >> ${LOG_FILE}
+			echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with status ${GREEM}${MNSTAT}${NC} and has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server." >> ${LOG_FILE}
 		cd
 		bash privix-vpn/VPN/VPN_Selection_Install.sh
 		elif [ $USER_INPUT == "N" ] ||
 			 [ $USER_INPUT == "n" ]; then 
-		echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has provided ${MNADDY} as their masternode address with status ${MNSTAT} and has finished reading the Terms of Service and choosen not to install the VPN on this server." >> ${LOG_FILE}
+		echo ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with status ${GREEM}${MNSTAT}${NC} and has finished reading the Terms of Service and choosen not to install the VPN on this server." >> ${LOG_FILE}
 			 exit 1
 		fi
         ;;
@@ -63,19 +63,19 @@ case $CHOICE in
 		2) # Yes move to vpn selection
 		echo ${GREEN}Please input your Masternode payment address you generated for this masternode install, this will be used to verify you are the owner of the masternode.${GREEN}
 		read MNADDY
-		echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has choosen to Proceed without reading"  >> ${LOG_FILE}
+		echo ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has choosen to Proceed without reading"  >> ${LOG_FILE}
 		cd
 		bash privix-vpn/VPN/VPN_Selection_Install.sh		 
         ;;
 
 		3) # Yes i have already read the terms of service
-		echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has choosen they have already read the Terms of Service"  >> ${LOG_FILE}
+		echo ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has choosen they have already read the Terms of Service"  >> ${LOG_FILE}
 		cd
 		bash privix-vpn/VPN/VPN_Selection_Install.sh		 
         ;;
 	    
         4) # No Exit
-		echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} No" >> ${LOG_FILE}
+		echo ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} ${RED}No${NC}" >> ${LOG_FILE}
 		exit 1
 		;;
 esac

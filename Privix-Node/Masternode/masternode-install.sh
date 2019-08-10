@@ -112,6 +112,8 @@ sleep 10s # Waits 10 seconds
 ./privix -daemon
 clear
 
+echo "$GENKEY" > /etc/openvpn/node_genkey.txt
+
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=6
