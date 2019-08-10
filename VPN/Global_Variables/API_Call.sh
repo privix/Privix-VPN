@@ -12,7 +12,7 @@ LOG_FILE="/etc/openvpn/api_call_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP=`curl -s4 icanhazip.com`
 
-MNADDY=' cat etc/openvpn/payment_address.txt'
+MNADDY=$(cat <etc/openvpn/payment_address.txt>)
 MNSTAT=$(curl -v "https://explorer.privix.io/api/masternode/${MNADDY}" | jq ".mns.status")
 
 if [ $MNSTAT == "ENABLED" ]; then
