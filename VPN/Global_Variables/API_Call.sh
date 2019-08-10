@@ -20,14 +20,15 @@ MNSTAT=$(curl -v "https://explorer.privix.io/api/masternode/${MNADDY}" | jq ".mn
 
 # Make the status log fresh each time for a correct status
 sudo rm -rf /etc/openvpn/masternode_status.txt
-echo "${MNSTAT}" > /etc/openvpn/masternode_status.txt
+MNSTATUS=${MNSTAT:1:7}
+echo "${MNSTATUS}" > /etc/openvpn/masternode_status.txt
 
-if echo $MNSTAT | grep -q "(ENABLED)" ; then
+if echo $MNSTATUS | grep -q "(ENABLED)" ; then
 # Make the logfile input for ENABLED
-echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
+echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTATUS}${NC}." >> ${LOG_FILE}
 
 else
 # Make the logfile input for anything else
-echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${RED}${MNSTAT}${NC}." >> ${LOG_FILE}
+echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${RED}${MNSTATUS}${NC}." >> ${LOG_FILE}
 
 fi
