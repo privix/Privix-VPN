@@ -8,9 +8,7 @@ This script will let you setup your own VPN server in no more than a minute, eve
 
 ### Menu Option
 * Option 1 Go To Privix Daemon / MasterNode Setup
-* Option 2 Go To Privix IPSEC Setup
-* Option 3 Go To Privix VPN Setup
-* Option 4 Go To Privix PPTP Setup
+* Option 2 Install VPN
 
 ### Installation
 Run the script and follow the assistant:
