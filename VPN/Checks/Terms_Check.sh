@@ -6,7 +6,7 @@
 LOG_FILE="/etc/openvpn/terms_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP=`curl -s4 icanhazip.com`
-MNSTAT=$(curl -s "https://explorer.privix.io/api/masternode/"${MNADDY}"" | jq '.mns.status')
+MNSTAT=$(curl -s "https://explorer.privix.io/api/masternode/${MNADDY}" | jq '.mns.status')
 
 HEIGHT=15
 WIDTH=40
