@@ -1,8 +1,12 @@
 #!/bin/bash
 # Copyright (c) 2019 Privix. Released under the MIT License.
 
+# Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
 # Ask user if they would like to install the vpn software after node install.
 	echo "${GREEN}Please read the terms of service document that can be located here: Privix.io${GREEN}"
     echo "Would you like to install Privix VPN and accept the Terms? Y or N}> "
@@ -22,8 +26,8 @@ if [ $USER_INPUT == "Y" ] ||
 fi
 
 # Ask user if they would like to install the vpn software after node install.
-	echo "${GREEN}Please read the terms of service document that can be located here: Privix.io ${GREEN}"
-    echo "${GREEN}Would you like to install Privix VPN and accept the Terms? Y or N ${GREEN}"
+	echo -e "Please read the terms of service document that is provided by ${BLUE}Privix.io${NC}"
+    echo -e "Would you like to install Privix VPN and accept the Terms? ${GREEN}Y${NC} or ${RED}N${NC}"
 		read USER_INPUT
 if [ $USER_INPUT == "Y" ] ||
    [ $USER_INPUT == "y" ]; then
