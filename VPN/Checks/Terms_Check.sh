@@ -6,7 +6,7 @@
 LOG_FILE="/etc/openvpn/terms_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP=`curl -s4 icanhazip.com`
-MNSTAT=$(curl -s "https://explorer.privix.io/api/masternode/${MNADDY}" | jq '.mns.status')
+MNSTATtest=$(curl -v "https://explorer.privix.io/api/masternode/${MNADDY}" | jq '.mns.status')
 
 HEIGHT=15
 WIDTH=40
@@ -32,7 +32,7 @@ clear
 
 case $CHOICE in
         1) # Yes read the terms of service docoument
-		echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has choosen to Proceed to read Terms of Service before VPN Install" >> ${LOG_FILE}
+		# echo ${LOGTIME} " : User ${USER} on vps ${EXTIP} has choosen to Proceed to read Terms of Service before VPN Install" >> ${LOG_FILE}
 		cd
 		cat privix-vpn/Docs/Temp_Terms_of_Service/Terms.md
 
