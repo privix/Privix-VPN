@@ -20,9 +20,9 @@ MNSTAT=$(curl -v "https://explorer.privix.io/api/masternode/${MNADDY}" | jq ".mn
 
 # Make the status log fresh each time for a correct status
 sudo rm -rf /etc/openvpn/masternode_status.txt
-echo "MNSTAT" > /etc/openvpn/masternode_status.txt
+echo "${MNSTAT}" > /etc/openvpn/masternode_status.txt
 
-if echo $MNSTAT | grep -q "("ENABLED")" ; then
+if echo $MNSTAT | grep -q "(ENABLED)" ; then
 # Make the logfile input for ENABLED
 echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
 
