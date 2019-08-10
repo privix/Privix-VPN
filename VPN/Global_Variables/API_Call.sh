@@ -27,7 +27,7 @@ echo "${MNSTATUS}" > /etc/openvpn/masternode_status.txt
 
 if [ $MNSTATUS == "ENABLED" ]; then
 # Make the logfile input for ENABLED
-echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTATUS}${NC}." >> ${LOG_FILE}
+echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEN}${MNSTATUS}${NC}." >> ${LOG_FILE}
 
 else
 # Make the logfile input for anything else
