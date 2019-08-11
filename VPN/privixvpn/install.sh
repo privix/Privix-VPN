@@ -10,7 +10,7 @@ NC='\033[0m' # No Color
 # Logs API Call.
 LOG_FILE="/etc/openvpn/mn_check_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
-EXTIP=`curl -s4 icanhazip.com`
+EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
 
 STARTDIR=$(pwd)
 
