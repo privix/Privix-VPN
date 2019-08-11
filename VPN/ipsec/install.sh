@@ -62,6 +62,12 @@ echo "Starting strongSwan and xl2tp..."
 service xl2tpd restart
 service strongswan restart
 
+## Create the cronjob
+echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has just finished setting up the privixvpn and is moving to run Masternode Verification Checks." >> ${LOG_FILE}
+cd
+cd privix-vpn/VPN/Checks
+bash MN_Check.sh
+
 echo
 echo "Installation script has been completed!"
 
