@@ -27,7 +27,7 @@ MNSTAT=$(</etc/openvpn/masternode_status.txt)
     
     echo "${GREEN}Checking Masternode Status${NC}"
 
-if [ $MNSTAT == "ENABLED" ]; then
+if [[ $MNSTAT == "ENABLED" ]]; then
 echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
         exit 1
         fi
