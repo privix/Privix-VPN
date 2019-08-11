@@ -79,7 +79,7 @@ echo Now ready to setup Vpx configuration file.
 
 RPCUSER=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 RPCPASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
-EXTIP=`curl -s4 icanhazip.com`
+EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
 echo Please input your private key.
 read GENKEY
 
