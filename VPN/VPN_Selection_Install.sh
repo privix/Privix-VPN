@@ -26,17 +26,20 @@ CHOICE=$(whiptail --clear\
 clear
 case $CHOICE in
         1) # ipsec
-		cd ipsec
+		cd
+		cd privix-vpn/VPN/ipsec
 		bash IPSEC_Install_Menu.sh
         ;;
 	    
         2) # pptp
-		cd pptp
+		cd
+		cd privix-vpn/VPN/pptp
 		bash PPTP_Install_Menu.sh
 		;;
 
 		3) # privixvpn
-		cd privixvpn
+		cd
+		cd privix-vpn/VPN/privixvpn
 		bash Privix_Install_Menu.sh
 		;;
 

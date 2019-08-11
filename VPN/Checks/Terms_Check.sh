@@ -13,7 +13,7 @@ LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
 
 HEIGHT=15
-WIDTH=40
+WIDTH=50
 CHOICE_HEIGHT=6
 BACKTITLE="Terms Check"
 TITLE="VPX VPN Terms And Condidtions"
