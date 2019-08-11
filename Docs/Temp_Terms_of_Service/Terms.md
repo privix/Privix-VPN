@@ -3,7 +3,7 @@
 Effective Date: April 15, 2014
 These Terms of Service ("Terms") govern your use of the www.privix.io website (the "Site") and the Privix VPN and related service (the "Services"), which are owned and operated by Privix ("Privix," "we" or "us"). Our Privacy Policy is incorporated by reference into these Terms, and is subject to the provisions of these Terms,. Please read these Terms carefully before you access the Site or Services, as these Terms form a binding legal agreement between you and Privix.
 By accessing the Site or registering for or using the Services, you agree to these Terms in their entirety.
-IF YOU DO NOT AGREE TO ALL OF THESE TERMS, DO NOT USE THE SITE OR SERVICES. YOUR USE OF OUR SITE AND SERVICES REQUIRES YOUR ACCEPTANCE OF THESE TERMS AS THEY MAY BE AMENDED FROM TIME TO TIME, INCLUDING THE POLICIES INCORPORATED BY REFERENCE HEREIN, WHICH INCLUDES THE PRIVIX PRIVACY POLICY, WHICH CAN BE FOUND AT WWW.PRIVIX.IO/PRIVACY-POLICY.PHP.
+IF YOU DO NOT AGREE TO ALL OF THESE TERMS, DO NOT USE THE SITE OR SERVICES. YOUR USE OF OUR SITE AND SERVICES REQUIRES YOUR ACCEPTANCE OF THESE TERMS AS THEY MAY BE AMENDED FROM TIME TO TIME, INCLUDING THE POLICIES INCORPORATED BY REFERENCE HEREIN.
 
 1.	    Changes to the Terms
 2.	    VPN Service
