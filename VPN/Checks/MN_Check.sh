@@ -18,7 +18,7 @@ EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
 MNADDY=$(</etc/openvpn/payment_address.txt)
 MNSTAT=$(</etc/openvpn/masternode_status.txt)
 
-    echo -e "${GREEN}Creating Crontab Entry${GREEN}"
+    echo -e "${GREEN}Creating Crontab Entry${NC}"
 	echo  "*/5 * * * * cd /root/active_check.sh 2>&1" > /root/activ_check.cron
 		crontab /root/activ_check.cron
 		rm /root/activ_check.cron.cron >/dev/null 2>&1
