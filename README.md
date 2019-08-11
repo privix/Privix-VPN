@@ -43,5 +43,5 @@ Feel free to use my reflink to signup and receive a bonus w/ vultr:
 <a href="https://www.vultr.com/?ref=6903922"><img src="https://www.vultr.com/media/banner_2.png" width="468" height="60"></a>
 
 ### Credits on developement of this.
-TFINCH <a href="https://github.com/MotoAcidic">
-CryptoNeverSleeps <a href="https://github.com/CryptoNeverSleeps">
+TFinch https://github.com/MotoAcidic                                                                                                  
+CryptoNeverSleeps https://github.com/CryptoNeverSleeps
