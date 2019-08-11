@@ -23,13 +23,13 @@ CHOICE=$(whiptail --clear\
 
 clear
 case $CHOICE in
-        1)	# Privix Node	
+        1)	# Privix Node Related	
 		cd Privix-Node
 		bash Node-Install.sh
         ;;
 	    
-        2)  # IPSEC
-		cd VPN
-		bash VPN_Selection_Install.sh
+        2)  # Privix VPN Related
+		cd VPN/Checks
+		bash Terms_Check.sh	
 		;;
 esac
