@@ -11,9 +11,11 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Logs API Call.
-LOG_FILE="/etc/openvpn/mn_check_log.txt"
+#LOG_FILE="/etc/openvpn/mn_check_log.txt"
+LOG_FILE="/etc/privix/mn_check_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
+CRON_PATH="/etc/privix/"
 
 MNADDY=$(</etc/openvpn/payment_address.txt)
 MNSTAT=$(</etc/openvpn/masternode_status.txt)
