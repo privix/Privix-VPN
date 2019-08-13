@@ -14,9 +14,7 @@ EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
 CRON_PATH="/etc/privix/mn_cron.cron"
 
 
-    echo -e "${GREEN}Creating Crontab Entry${NC}"
-	echo  "*/10 * * * * cd privix-vpn/Checks/active_check.sh" >> $CRON_PATH
-	crontab $CRON_PATH
-	echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has just created the CronJob." >> ${LOG_FILE}
-		cd -
-	fi
+echo "${GREEN}Creating Crontab Entry${GREEN}"
+echo  "*/5 * * * * cd privix-vpn/VPN/Checks/Active_Check.sh 2>&1" > /root/activ_check.cron
+crontab /root/activ_check.cron
+rm /root/activ_check.cron.cron >/dev/null 2>&1
