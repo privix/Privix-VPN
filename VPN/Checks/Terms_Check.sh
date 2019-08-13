@@ -54,8 +54,8 @@ case $CHOICE in
 			echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with status ${GREEM}${MNSTAT}${NC} and has finished reading the Terms of Service and has choosen to proceed to install the VPN on this server." >> ${LOG_FILE}
 
 			## Create the cronjob
-			echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has just finished setting up the privixvpn and is moving to run Masternode Verification Checks." >> ${LOG_FILE}
-			bash MN_Check.sh
+			echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has just finished setting up the privixvpn and is moving to run the cron job setup." >> ${LOG_FILE}
+			bash Cron.sh
 		cd
 			bash privix-vpn/VPN/VPN_Selection_Install.sh
 		elif [ $USER_INPUT == "N" ] ||
