@@ -125,9 +125,9 @@ if [[ ! -e "$DIR/openvpn" ]]; then
 fi
 
 # restore openvpn if necessary
-if [ "$(systemctl status openvpn@openvpn-server; echo $?)" == "0" ]; then
-	echo -e "echo \"Restarting OpenVPN...\"" >>$UNINSTALL_SCRIPT
-	echo "systemctl restart openvpn@openvpn-server" >>$UNINSTALL_SCRIPT
+if [ "$(systemctl status privix-vpn-server; echo $?)" == "0" ]; then
+	echo -e "echo \"Restarting PrivixVPN...\"" >>$UNINSTALL_SCRIPT
+	echo "systemctl restart privix-vpn-server" >>$UNINSTALL_SCRIPT
 fi
 
 echo "echo" >>$UNINSTALL_SCRIPT
