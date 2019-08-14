@@ -19,11 +19,9 @@ MNSTAT=$(</etc/openvpn/masternode_status.txt)
 
 	if [[ $MNSTAT == "ENABLED" ]]; then
 		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
-        sleep 5
-		exit 1
+        exit 1
         fi
-    else
-    do 
+    else  
 		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
 			rm -rf /etc/privix/mn_cron.cron
 			systemctl stop openvpn@openvpn-server
