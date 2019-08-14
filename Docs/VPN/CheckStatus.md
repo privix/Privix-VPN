@@ -5,4 +5,4 @@ systemctl status cron
 
 # VPN Related Commands
 ```
-systemctl restart privix-vpn-server
+systemctl restart openvpn@openvpn-server

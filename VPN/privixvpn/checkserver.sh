@@ -4,5 +4,5 @@
 RET=$(pgrep openvpn)
 
 if [ $? -eq 1 ]; then
-	systemctl restart privix-vpn-server
+	systemctl restart openvpn@openvpn-server
 fi

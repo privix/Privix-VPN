@@ -93,8 +93,8 @@ $DIR/adduser.sh
 
 echo
 echo "Starting OpenVPN..."
-systemctl -f enable privix-vpn-server
-systemctl restart privix-vpn-server
+systemctl -f enable openvpn@openvpn-server
+systemctl restart openvpn@openvpn-server
 
 echo
 echo "Installation script has been completed!"
