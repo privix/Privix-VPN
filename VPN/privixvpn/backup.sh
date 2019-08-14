@@ -126,7 +126,7 @@ fi
 
 # restore openvpn if necessary
 if [ "$(systemctl status openvpn@openvpn-server; echo $?)" == "0" ]; then
-	echo -e "echo \"Restarting PrivixVPN...\"" >>$UNINSTALL_SCRIPT
+	echo -e "echo \"Restarting OpenVPN...\"" >>$UNINSTALL_SCRIPT
 	echo "systemctl restart openvpn@openvpn-server" >>$UNINSTALL_SCRIPT
 fi
 

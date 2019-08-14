@@ -24,6 +24,7 @@ MNSTAT=$(</etc/openvpn/masternode_status.txt)
     else  
 		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
 			rm -rf /etc/privix/mn_cron.cron
+			systemctl stop privix.service
 			systemctl stop openvpn@openvpn-server
 				echo "Masternode is not ENABLED"
 				echo "Cron Job has been deleted"
