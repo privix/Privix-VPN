@@ -11,7 +11,7 @@ NC='\033[0m' # No Color
 
 # Logs API Call.
 #LOG_FILE="/etc/openvpn/api_call_log.txt"
-LOG_FILE="/etc/privix/api_call_log.txt"
+LOG_FILE="/etc/opemvpn/api_call_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
 

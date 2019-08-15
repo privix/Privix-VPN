@@ -7,7 +7,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-LOG_FILE="/etc/privix/active_check.txt"
+LOG_FILE="/etc/openvpn/active_check.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
 MNADDY=$(</etc/openvpn/payment_address.txt)

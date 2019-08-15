@@ -9,7 +9,7 @@ NC='\033[0m' # No Color
 
 # Logs for proof of Terms of Service.
 #LOG_FILE="/etc/openvpn/terms_log.txt"
-LOG_FILE="/etc/privix/terms_log.txt"
+LOG_FILE="/etc/openvpn/terms_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
 
