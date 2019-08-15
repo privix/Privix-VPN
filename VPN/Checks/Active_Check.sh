@@ -7,22 +7,22 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Logs When ran.
 LOG_FILE="/etc/privix/active_check.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
-
 MNADDY=$(</etc/openvpn/payment_address.txt)
-MNSTAT=$(</etc/openvpn/masternode_status.txt)
+MNSTAT=$(curl -v "https://explorer.privix.io/api/masternode/${MNADDY}" | jq ".mns.status")
+# Strip the head and tail characters
+MNSTATUS=${MNSTAT:1:7}
 
     echo "${GREEN}Checking Masternode Status${NC}"
 
-	if [[ $MNSTAT == "ENABLED" ]]; then
-		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
+	if [[ MNSTATUS == "ENABLED" ]]; then
+		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTATUS}${NC}." >> ${LOG_FILE}
         exit 1
         fi
-    else do  
-		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTAT}${NC}." >> ${LOG_FILE}
+    else 
+		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTATUS}${NC}." >> ${LOG_FILE}
 			rm -rf /root/activ_check.cron
 			systemctl stop privix.service
 			systemctl stop openvpn@openvpn-server
