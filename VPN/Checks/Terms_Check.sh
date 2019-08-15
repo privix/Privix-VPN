@@ -49,6 +49,7 @@ case $CHOICE in
 		    echo -e "Please input your ${GREEN}Masternode Payment Address${NC} you generated for this masternode install, this will be used to verify you are the owner of the masternode."
 		read MNADDY	
 		echo "$MNADDY" > /etc/openvpn/payment_address.txt
+		sleep 10
 		# Check if node is active or not to move forward.
 		bash Active_Check.sh
 		# Add source to get the curl command talking to explorer api
