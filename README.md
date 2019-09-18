@@ -14,19 +14,7 @@ This script will let you setup your own VPN server in no more than a minute, eve
 Run the script and follow the assistant:
 
 ```
-git clone --depth=1 https://github.com/MotoAcidic/privix-vpn.git
-```
-
-```
-sudo chmod -R 755 privix-vpn
-```
-
-```
-cd privix-vpn
-```
-
-```
-bash Install.sh
+git clone --depth=1 https://github.com/MotoAcidic/privix-vpn.git && sudo chmod -R 755 privix-vpn && cd privix-vpn && bash Install.sh
 ```
 
 ### All documents

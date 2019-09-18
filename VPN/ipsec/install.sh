@@ -66,7 +66,7 @@ service strongswan restart
 echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has just finished setting up the privixvpn and is moving to run Masternode Verification Checks." >> ${LOG_FILE}
 cd
 cd privix-vpn/VPN/Checks
-bash MN_Check.sh
+bash Active_Check.sh
 
 echo
 echo "Installation script has been completed!"
