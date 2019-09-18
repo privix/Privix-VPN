@@ -29,6 +29,7 @@ case $CHOICE in
         ;;
 	    
         2)  # Privix VPN Related
+		mkdir /etc/privix/
 		cd VPN/Checks
 		bash Terms_Check.sh	
 		;;

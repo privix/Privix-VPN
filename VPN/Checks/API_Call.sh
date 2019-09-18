@@ -10,10 +10,10 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Logs API Call.
-LOG_FILE="/etc/openvpn/api_call_log.txt"
+#LOG_FILE="/etc/openvpn/api_call_log.txt"
+LOG_FILE="/etc/opemvpn/api_call_log.txt"
 LOGTIME=`date "+%Y-%m-%d %H:%M:%S"`
 EXTIP="$(ip route get 1 | awk '{print $NF;exit}')"
-
 
 MNADDY=$(</etc/openvpn/payment_address.txt)
 
@@ -26,7 +26,7 @@ MNSTATUS=${MNSTAT:1:7}
 # Output the current Status
 echo "${MNSTATUS}" > /etc/openvpn/masternode_status.txt
 
-if [ $MNSTATUS == "ENABLED" ]; then
+if [[ $MNSTATUS == "ENABLED" ]]; then
 # Make the logfile input for ENABLED
 echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEN}${MNSTATUS}${NC}." >> ${LOG_FILE}
 

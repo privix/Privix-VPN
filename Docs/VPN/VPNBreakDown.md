@@ -143,3 +143,7 @@ During installation script will backup config files which are in system and will
 
 These "wizards" will uninstall installed packages, restore system config files (which was before installation), remove added iptables  rules and cron jobs.
 
+# To check if the Cron Job is running
+```
+systemctl status cron
+```
