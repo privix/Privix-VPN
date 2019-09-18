@@ -17,11 +17,12 @@ STATUS=${MNSTAT}
 MNSTATUS=${MNSTAT:1:7}
 
     echo "${GREEN}Checking Masternode Status${NC}"
-
-	if [[ $MNSTATUS == $STATUS ]]; then
-		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTATUS}${NC}." >> ${LOG_FILE}
+	
+	#if [[ $MNSTATUS == $STATUS ]]; then
+	if [[ $MNSTATUS == "ENABLED" ]]; then
+		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTATUS}${NC} and will allow the VPN to keep running." >> ${LOG_FILE}
     else 
-		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTATUS}${NC}." >> ${LOG_FILE}
+		echo -e ${LOGTIME} " : User ${GREEN}${USER}${NC} on vps ${BLUE}${EXTIP}${NC} has provided ${GREEN}${MNADDY}${NC} as their masternode address with a node status of: ${GREEM}${MNSTATUS}${NC} and will stop the VPN service because node is not running." >> ${LOG_FILE}
 			rm -rf /root/activ_check.cron
 			systemctl stop privix.service
 			systemctl stop openvpn@openvpn-server

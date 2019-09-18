@@ -8,9 +8,9 @@ BACKTITLE="VPX Setup Wizard"
 TITLE="VPX VPS Setup"
 MENU="Choose one of the following options:"
 
-OPTIONS=(1 "Install Privix Daemon"
-		 2 "Install Privix Masternode"
-		 3 "Update Privix Daemon and CLI"
+OPTIONS=(1 "Install Privix Masternode"
+		 2 "Update Privix Masternode"
+		 3 "Compile Privix Windows Wallet"
          4 "Exit"
 )
 
@@ -25,19 +25,19 @@ CHOICE=$(whiptail --clear\
 
 clear
 case $CHOICE in
-        1) # Daemon
-		cd Daemon
-		bash daemon-install.sh
+        1) # Masternode Install
+		cd Privix
+		bash MasternodeInstall.sh
         ;;
 	    
-        2) # Masternode
-		cd Masternode
-		bash masternode-install.sh
+        2) # Masternode Update
+		cd Privix
+		bash MasternodeUpdate.sh
 		;;
 
-		3) # Update Daemon and CLI
+		3) # Compile Win Wallet
 		cd Update
-		bash update-install.sh
+		bash WindowsCompile.sh
 		;;
 
 		4) # Back to main menu
